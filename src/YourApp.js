@@ -4,8 +4,8 @@ export const YourApp = () => {
   return (
     <div
       style={{
-        width: "100vw",
-        height: "100vh",
+        width: "180vw",
+        height: "15vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
