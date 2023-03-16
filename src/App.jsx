@@ -5,15 +5,19 @@ import {
   darkTheme,
 } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { mainnet, polygon, optimism, arbitrum, goerli } from "wagmi/chains";
+import { mainnet, polygon, optimism, arbitrum, goerli, zhejiang } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
-import Navbar from "./Navbar";
-import MintButton from "./MintButton";
-import Text from "./Text";
+import { Route, Routes } from 'react-router-dom';
+import Faucet from './components/routes/Faucet';
+import MintYourAccess from './components/routes/MintYourAccess';
+import Welcome from './components/routes/Welcome';
+import Navbar from "./components/Navbar";
+import React from 'react';
+
 
 const { chains, provider } = configureChains(
-  [mainnet, polygon, goerli, optimism, arbitrum],
+  [mainnet, polygon, goerli, optimism, arbitrum, zhejiang],
   [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
 );
 
@@ -39,12 +43,11 @@ function App() {
         chains={chains}
       >
         <Navbar />
-        <div className="flex justify-center mt-20">
-          <MintButton>Mint</MintButton>
-        </div>
-        <div>
-          <Text />
-        </div>
+        <Routes>
+          <Route exact path="/" element={<Faucet />} />
+          <Route exact path="/mint-your-access" element={<MintYourAccess />} />
+          <Route exact path="/welcome" element={<Welcome />} />
+        </Routes>
       </RainbowKitProvider>
     </WagmiConfig>
   );

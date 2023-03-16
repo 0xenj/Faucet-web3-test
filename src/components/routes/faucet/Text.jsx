@@ -1,6 +1,4 @@
-<a class="justify-center font-bold">
-          You need Cookiees to mint your access !
-        </a>
+import React from 'react';
 
 const Text = () => {
     return (
