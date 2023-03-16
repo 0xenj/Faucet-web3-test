@@ -2,12 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {
-      colors: {
-        primary: "#EA755E",
-        secondary: "#BD675F",
-      },
-    },
+    extend: {},
   },
   plugins: [require("tailwindcss"), require("autoprefixer")],
 };
