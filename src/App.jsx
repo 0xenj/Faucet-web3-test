@@ -9,6 +9,8 @@ import { mainnet, polygon, optimism, arbitrum, goerli } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import Navbar from "./Navbar";
+import MintButton from "./MintButton";
+import Text from "./Text";
 
 const { chains, provider } = configureChains(
   [mainnet, polygon, goerli, optimism, arbitrum],
@@ -37,6 +39,12 @@ function App() {
         chains={chains}
       >
         <Navbar />
+        <div className="flex justify-center mt-20">
+          <MintButton>Mint</MintButton>
+        </div>
+        <div>
+          <Text />
+        </div>
       </RainbowKitProvider>
     </WagmiConfig>
   );
