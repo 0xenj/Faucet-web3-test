@@ -13,14 +13,14 @@ const Navbar = () => {
         <div className="basis-1/8 pt-5">
           <span className="font-bold ml-2 text-3xl text-yellow-900">Cookiees</span>
         </div>
-        <div className="basis-2/3 pt-20 ml-32 mr-8">
+        <div className="basis-2/3 pt-20 ml-32 mr-2">
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
             <Link to="/" className="mr-10 text-yellow-900 font-semibold hover:font-bold hover:underline">Faucet</Link>
             <Link to="/mint-your-access" className="mr-10 text-yellow-900 font-semibold hover:font-bold hover:underline">Mint your access</Link>
             <Link to="/welcome" className="mr-10 text-yellow-900 font-semibold hover:font-bold hover:underline">Welcome</Link>
           </nav>
         </div>
-        <div className="basis-1/4 pt-5">
+        <div className="basis-1/3 pt-5 pl-6">
           <ButtonConnect />
         </div>
       </div>
