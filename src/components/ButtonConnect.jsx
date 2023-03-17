@@ -4,7 +4,7 @@ import React from 'react';
 const ButtonConnect = () => {
   return (
     <div>
-      <ConnectButton />
+      <ConnectButton chainStatus="icon" showBalance={false} />
     </div>
   );
 };

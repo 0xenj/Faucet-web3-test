@@ -14,6 +14,7 @@ import MintYourAccess from './components/routes/MintYourAccess';
 import Welcome from './components/routes/Welcome';
 import Navbar from "./components/Navbar";
 import React from 'react';
+import { BrowserRouter } from "react-router-dom";
 
 
 const { chains, provider } = configureChains(
@@ -34,6 +35,7 @@ const wagmiClient = createClient({
 
 function App() {
   return (
+    <BrowserRouter>
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider
         theme={darkTheme({
@@ -50,6 +52,7 @@ function App() {
         </Routes>
       </RainbowKitProvider>
     </WagmiConfig>
+    </BrowserRouter>
   );
 }
 

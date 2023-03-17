@@ -6,6 +6,7 @@ import { ethers } from "ethers";
 
 function Faucet() {
 
+
   const contractAddress = "0x67d2E67180016C59a4210cD53DbfEfB9b3197018";
   const contractAbi = [
     {
@@ -301,24 +302,20 @@ function Faucet() {
   const providerEth = new ethers.providers.Web3Provider(window.ethereum);
   const signer = providerEth.getSigner();
 
+
   const handleMintClick = async () => {
 
       const mintContract = new ethers.Contract(contractAddress, contractAbi, signer);
       await mintContract.mintFaucet();
   };
 
-  const balance = async () => {
-
-    const mintContract = new ethers.Contract(contractAddress, contractAbi, signer);
-    const myBalance = await mintContract.balanceOf("0xF6547bd336230Ff9A371161b309Ea11b205ae2dC");
-    console.log(`myBalance = ${myBalance / 1e18} COOK`);
-  }
-
   return (
     <div>
       <div className="flex justify-center mt-20">
         <MintButton onClick={handleMintClick} ></MintButton>
-        <Balance onClick={balance} ></Balance>
+      </div>
+      <div className='flex justify-center mt-10'>
+        <Balance />
       </div>
       <div>
         <Text />
